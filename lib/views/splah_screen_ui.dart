@@ -1,13 +1,27 @@
 import 'package:flutter/material.dart';
 
-class splahUI extends StatefulWidget {
-  const splahUI({super.key});
+class SplahUI extends StatefulWidget {
+  const SplahUI({super.key});
 
   @override
-  State<splahUI> createState() => _splahUIState();
+  State<SplahUI> createState() => _SplahUIState();
 }
 
-class _splahUIState extends State<splahUI> {
+class _SplahUIState extends State<SplahUI> {
+  @override
+  void initState() {
+    Future.delayed(
+      Duration(seconds: 3),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Moneyinput(),
+        ),
+      ),
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
